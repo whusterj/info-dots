@@ -3,7 +3,11 @@ import Popover from './popover';
 import Position from './position';
 import { invoke, debounce } from './utils';
 
-var InfoDots = InfoDots;
+// Bind to global (same as `window`) so that our component can be
+// used in inline scripts, if that's what people are into.
+global.InfoDots = InfoDots;
+global.InfoDot = InfoDot;
+
 export default InfoDots;
 export var InfoDot = InfoDot;
 
