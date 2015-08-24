@@ -1,0 +1,152 @@
+@import url(http://fonts.googleapis.com/css?family=Abril+Fatface);
+@import url(http://fonts.googleapis.com/css?family=Signika);
+
+/**
+ * Demo Page Styles
+ **/
+body {
+  font-family: Signika, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.40;
+  background: rgb(234, 234, 242);
+}
+
+h1, h2 {
+  font-family: Abril Fatface, Georgia, serif;
+  font-weight: 400;
+}
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+h2 {
+  font-size: 37px;
+}
+
+code {
+  font-size: 16px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#importantText {
+  background: rgb(72, 126, 195);
+  border-bottom: 3px solid rgb(50, 91, 150);
+  color: white;
+  border-radius: 4px;
+  padding: 6px;
+  width: 250px;
+}
+
+/**
+ * Info Dot
+ **/
+.info-dot {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: gray;
+  background-color: rgba(0, 0, 0, 0.35);
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  z-index: 1000;
+  transition: width linear 0.2s,
+              height linear 0.2s;
+}
+
+.pulse {  
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: 1.5s;   
+  animation-iteration-count: 1;
+    visibility: visible !important; 
+}
+
+.fade-in-up {
+    animation-name: fade-in-up;
+    animation-duration: 0.4s;   
+  animation-iteration-count: 1;
+    visibility: visible !important; 
+}
+
+.fade-out-down {
+    animation-name: fade-out-down;
+    animation-duration: 0.4s;   
+  animation-iteration-count: 1;
+    visibility: visible !important; 
+}
+
+/**
+ * Popover
+ **/
+.popover {
+  position: absolute;
+  background: white;
+  min-width: 150px;
+  max-width: 300px;
+  padding: 6px 12px;
+  margin: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.45);
+  border-radius: 6px;
+  z-index: 1001;
+}
+
+/**
+ * Animations
+ **/
+@keyframes pulse {
+  from { transform: scale(1.0, 1.0); }
+  65%  { transform: scale(0.8, 0.8); }
+  to   { transform: scale(1.0, 1.0); }
+}
+
+@keyframes fade-in {
+    0% {
+        transform: scale(0);
+        opacity: 0.0;       
+    }
+    60% {
+        transform: scale(1.1);  
+    }
+    80% {
+        transform: scale(0.9);
+        opacity: 1; 
+    }   
+    100% {
+        transform: scale(1);
+        opacity: 1; 
+    }       
+}
+
+@keyframes fade-in-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0.0;       
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1; 
+    }       
+}
+
+@keyframes fade-out-down {
+  from {
+        transform: translateY(0);
+        opacity: 1; 
+  }
+  to {
+        transform: translateY(20px);
+        opacity: 0.0;   
+  }
+}

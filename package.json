@@ -1,0 +1,34 @@
+{
+  "name": "info-dots",
+  "version": "1.0.0",
+  "description": "Info Dots are UI Components you can use to annotate bits of your web site or web app interface. They appear as small, pulsing anchors that you can attach to practically any DOM Element.",
+  "main": "src/info-dots.js",
+  "scripts": {
+    "clean": "rm -rf dist && mkdir dist && mkdir \"dist/js\" && mkdir \"dist/css\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "cp src/index.html dist/index.html && cp -R src/css/* dist/css",
+    "build": "npm run clean && npm run copy && browserify src/js/demo.js -o dist/js/demo.js -v",
+    "beefy": "beefy src/js/demo.js --cwd dist -- -o dist/js/demo.js -v",
+    "start": "npm run build && npm run beefy",
+    "watch": "watchify src/js/demo.js -o dist/js/demo.js -v"
+  },
+  "author": "William Huster <whusterj@gmail.com>",
+  "license": "MIT",
+  "browserify": {
+    "extension": [
+      "js",
+      "es6"
+    ],
+    "transform": [
+      "babelify"
+    ]
+  },
+  "dependencies": {
+    "babel": "^5.8.5",
+    "babelify": "^6.1.3",
+    "watchify": "^3.3.0"
+  },
+  "devDependencies": {
+    "beefy": "^2.1.5"
+  }
+}

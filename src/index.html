@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Info Dots</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/monokai_sublime.min.css">
+</head>
+<body>
+
+  <div class="container">
+  
+    <h1><span id="vanillaDotAnchor">VanillaJS</span> Info Dots!</h1>
+    <div data-info-dot data-target="vanillaDotAnchor"
+         data-message="Look, ma! No frameworks! Well, except the one built into every browser....">
+    </div>
+
+    <p>Info Dots are UI Components you can use to annotate bits of your web site
+       or web app interface. They appear as small, pulsing anchors that you can attach
+       to practically any DOM Element.</p>
+    
+    <h2>Just Declare It</h2>
+    
+    <p>I'm a huge fan of UI components that can be declared in HTML with minimal
+      configuration in JavaScript. I'm <em>especially</em> fanatical about the
+      structure of the required HTML mark-up.</p>
+    
+    <p><mark>Component mark-up should be simple.</mark> It should easy to learn how to
+      use a component. The mark-up should also be "semantic." That is, it should explain
+      itself, so that it's hard to forget how it works. And so these are a few of the goals
+      of this component.</p>
+
+    <h3>Example</h3>
+
+    <p>The element you want to annotate does not need to know about the Info Dot
+      that will be attached to it. All you have to do is to set an
+      <mark><code class="html">id</code></mark> attribute on the element you
+      want to target, so that our Info Dot can find it.</p>
+    
+    <pre><code class="html">&lt;!-- Include the script --&gt;
+&lt;script src="info-dots.js"&gt;&lt;/script&gt;
+
+&lt;!-- Here's the element we want to annotate --&gt;
+&lt;div id="importantText"&gt;&lt;p&gt;This is important&lt;/p&gt;&lt;/div&gt;
+
+&lt;!-- Place this Info Dot mark-up anywhere else... --&gt;
+&lt;!-- Just make sure to set the `data-target` --&gt;
+&lt;div data-info-dot data-target="importantText"
+     <span id="interestingCode">data-message="Here's something informative for ye."&gt;</span>
+&lt;/div&gt;
+
+&lt;!-- Initialize the plugin --&gt;
+&lt;script&gt;InfoDots.init();&lt;/script&gt;</code></pre>
+
+    <div data-info-dot data-target="interestingCode"
+         data-message="Info Dots can even work here!">
+    </div>
+    
+    <h3>Result</h3>
+    
+    <!-- Here's the element we want to annotate -->
+    <div id="importantText"><p>This is important</p></div>
+
+    <!-- Place this Info Dot mark-up anywhere else... -->
+    <!-- Just make sure to set the `data-target` -->
+    <div data-info-dot data-target="importantText"
+         data-message="Here's something informative for ye.">
+    </div>
+    
+    <p>That's all there is to it!</p>
+
+    <p><a href="http://williamhuster.com" target="_blank">William Huster made this!</a></p>
+    
+    <h2>Browser Support (probably)</h2>
+    
+    <p>Info Dots has been thoroughly tested in Chrome for Desktop, but not so much
+       other browsers. These browsers will most likely support it, though:</p>
+    
+    <ul>
+      <li>IE 10+</li>
+      <li>Firefox 4+</li>
+      <li>Safari</li>
+    </ul>
+    
+    <p><mark>Info Dots is HTML5-first.</mark> While I am very interested in making this component
+       compliant with modern web standards, I have no interest in hacking it up to
+       provide support for older browsers. If your needs differ, you are of course welcome
+       to fork this code and perform whatever unholy rituals upon it.</p>
+
+  </div>
+
+  <!-- Load and init highlightJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- Load up the demo page script (w/ info-dots dependency) -->
+  <script src="js/demo.js"></script>
+
+</body>
+</html>
