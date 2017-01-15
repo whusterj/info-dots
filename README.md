@@ -29,6 +29,10 @@ The element you want to annotate does not need to know about the Info Dot that w
 <script>InfoDots.init();</script>
 ```
 
+### Demo
+
+[Link to Codepen Demo](https://codepen.io/whusterj/full/VLJgQj/)
+
 Browser Support (probably)
 
 Info Dots has been thoroughly tested in Chrome for Desktop, but not so much other browsers. These browsers will most likely support it, though:
